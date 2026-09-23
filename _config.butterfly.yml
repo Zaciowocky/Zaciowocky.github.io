@@ -54,7 +54,7 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /img/favicon-32.png
 
 avatar:
   img: /img/avatar/cheshire-cat-v1.png
@@ -1061,6 +1061,8 @@ css_prefix: true
 inject:
   head:
     - <link rel="preload" as="image" href="/img/hero/wonderland-hero-v1.png">
+    - <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    - <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script defer src="/js/wonderland-dust.js"></script>
