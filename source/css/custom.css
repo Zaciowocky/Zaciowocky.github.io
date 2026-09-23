@@ -158,6 +158,10 @@ html, body {
   transform: translate(-50%, -50%) rotate(360deg);
 }
 
+#readmode > i {
+  background-image: url('/img/ui/reading-mode-book.svg');
+}
+
 #hide-aside-btn > i {
   background-image: url('/img/ui/layout-cards.svg');
 }
@@ -601,6 +605,82 @@ body {
 #content-inner #article-container h1 { font-size: 2em; }
 #content-inner #article-container h2 { font-size: 1.65em; }
 #content-inner #article-container h3 { font-size: 1.35em; }
+
+/* Reading mode: keep the Wonderland background while giving prose and code a
+   deliberately high-contrast midnight panel. */
+body.read-mode {
+  --font-color: #e4f2f1;
+  --white: #effaf8;
+  --light-grey: #c7dddf;
+  --gray: #8fb5bd;
+  --hr-border: rgba(151, 213, 213, .38);
+  --readmode-light-color: #07101d;
+  background:
+    linear-gradient(rgba(4, 10, 20, .72), rgba(4, 10, 20, .9)),
+    url('/img/hero/wonderland-hero-v1.png') center / cover fixed no-repeat !important;
+}
+
+body.read-mode #body-wrap { background: transparent; }
+
+body.read-mode #page-header.post-bg {
+  display: block !important;
+  height: clamp(360px, 34vw, 520px);
+  background-image:
+    linear-gradient(90deg, rgba(4, 10, 20, .54), rgba(4, 10, 20, .22) 54%, rgba(4, 10, 20, .58)),
+    url('/img/hero/wonderland-hero-v1.png') !important;
+  background-position: center, center 42%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body.read-mode #page-header.post-bg::before { opacity: 0; }
+
+body.read-mode #page-header.post-bg > #post-info {
+  text-align: left;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, .78);
+}
+
+body.read-mode #content-inner > #post {
+  max-width: min(1280px, calc(100% - 64px));
+  margin: 44px auto 80px;
+  border: 1px solid rgba(139, 205, 205, .26);
+  border-radius: 20px 8px 20px 8px;
+  background: rgba(5, 17, 29, .9);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .46), inset 0 1px rgba(255, 255, 255, .045);
+}
+
+body.read-mode #article-container {
+  color: #e4f2f1;
+  text-shadow: none;
+}
+
+body.read-mode #article-container :is(h1, h2, h3, h4, h5, h6) { color: #f0fffd; }
+body.read-mode #article-container :is(a, strong) { color: #9de5df; }
+body.read-mode #article-container code {
+  border: 1px solid rgba(113, 189, 194, .24);
+  background: #173145;
+  color: #f0c878;
+}
+
+body.read-mode #article-container :is(figure.highlight, pre, .highlight) {
+  border: 1px solid rgba(111, 192, 196, .3);
+  background: #061521 !important;
+  color: #e8f8f6 !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+}
+
+body.read-mode #article-container .highlight :is(table, pre, .code) { background: transparent !important; }
+body.read-mode #article-container .highlight .gutter { background: #0b2635 !important; }
+body.read-mode #article-container .highlight :is(.gutter, .gutter pre) { color: #79b7c2 !important; }
+body.read-mode #article-container .highlight :is(.code pre, .line) { color: #e8f8f6 !important; }
+body.read-mode #article-container .highlight .comment { color: #91b5bd !important; }
+
+body.read-mode .exit-readmode {
+  border: 1px solid rgba(185, 154, 97, .72);
+  border-radius: 50%;
+  background: #0a1a29;
+  color: #e5c47e;
+}
 
 @media (max-width: 768px) {
   #page-header.post-bg {
