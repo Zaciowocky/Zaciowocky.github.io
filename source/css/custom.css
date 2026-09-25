@@ -289,6 +289,21 @@ html.hide-aside #hide-aside-btn > i {
 #content-inner #article-container :is(table th, table td) { border-color: #365161; }
 #content-inner #article-container code { background-color: #1a3348; color: #e1c18e; }
 #content-inner #article-container :is(figure.highlight, pre) { background: #091726; color: #c7d9df; }
+#content-inner #article-container figure.highlight table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+#content-inner #article-container figure.highlight .code {
+  width: 100%;
+  background: #091726;
+}
+#content-inner #article-container figure.highlight .code pre {
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  background: #091726;
+}
 .wonderland-banner-caption { text-align: center; }
 
 /* Short interior banners share the moonlit forest from the homepage. */
@@ -669,7 +684,22 @@ body.read-mode #article-container :is(figure.highlight, pre, .highlight) {
   box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
 }
 
-body.read-mode #article-container .highlight :is(table, pre, .code) { background: transparent !important; }
+body.read-mode #article-container .highlight table {
+  display: table !important;
+  width: 100%;
+  table-layout: fixed;
+  background: #061521 !important;
+}
+body.read-mode #article-container .highlight .code {
+  width: 100%;
+  background: #061521 !important;
+}
+body.read-mode #article-container .highlight .code pre {
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  background: #061521 !important;
+}
 body.read-mode #article-container .highlight .gutter { background: #0b2635 !important; }
 body.read-mode #article-container .highlight :is(.gutter, .gutter pre) { color: #79b7c2 !important; }
 body.read-mode #article-container .highlight :is(.code pre, .line) { color: #e8f8f6 !important; }
