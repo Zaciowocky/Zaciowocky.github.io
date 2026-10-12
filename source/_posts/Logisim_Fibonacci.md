@@ -2,6 +2,7 @@
 title: Logisim挑战题 Fibonacci_2
 date: 2026-10-12 15:30:00
 description: 斐波那契挑战题的思路以及实现
+mathjax: true
 tags:
   - 计组实验
 categories:
@@ -33,18 +34,18 @@ categories:
 ## 分析
 N是32bit无符号数，能表示到$2^n$，一次一次加起来肯定是不行的。
 斐波那契数列能用矩阵乘法的形式给出:
-$$
+<script type="math/tex; mode=display">
 \begin{bmatrix}
 F_{n+1} \\F_n\end{bmatrix}=\begin{bmatrix}1 & 1 \\1 & 0\end{bmatrix}^{n}\cdot
 \begin{bmatrix}
 1 \\
 0
 \end{bmatrix}
-$$
+</script>
 
 也就是能转化成矩阵的n次幂。
 
-根据快速幂的思想，$2^(32)$次幂最多拆成32个数相乘，$每一个2^n(n<32)$次幂只需要$2^(n-1)$平方即可，只需要一个周期。
+根据快速幂的思想，$2^(32)$次幂最多拆成32个数相乘，每一个$2^n(n<32)$次幂只需要$2^(n-1)$平方即可，只需要一个周期。
 
 所以32次幂32个周期，可行。
 
