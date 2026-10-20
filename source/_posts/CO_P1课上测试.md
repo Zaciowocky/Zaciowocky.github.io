@@ -216,9 +216,7 @@ Quick-Find 直接保存每个节点的组号：合并时遍历所有节点，查
 
 ### 异或（友链）
 
-第三种方法利用异或抵消路径中间节点：将每个接线柱表示为独热码，每根导线表示为两端独热码的异或，枚举三根导线的子集，判断其异或和是否等于两个查询节点独热码的异或。
-
-具体实现和推导见友链：[《[计组实验] P1 Verilog》](https://preskirimasyaro.github.io/posts/%E8%AE%A1%E7%BB%84%E5%AE%9E%E9%AA%8C-p1-verilog/)。
+第三种方法请移步友链阅读：[《[计组实验] P1 Verilog》](https://preskirimasyaro.github.io/posts/%E8%AE%A1%E7%BB%84%E5%AE%9E%E9%AA%8C-p1-verilog/)。
 
 ---
 
