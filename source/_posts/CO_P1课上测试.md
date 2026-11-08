@@ -7,6 +7,7 @@ tags:
   - 计组实验
 categories:
   - 学习
+cover: /img/covers/landscapes/p1-blue-coast.jpg
 ---
 
 # P1课上测试

@@ -6,6 +6,7 @@ categories:
 tags:
   - Hexo
   - 博客
+cover: /img/covers/landscapes/iverilog-coast.jpg
 ---
 
 # iverilog + gtkwave 仿真方法

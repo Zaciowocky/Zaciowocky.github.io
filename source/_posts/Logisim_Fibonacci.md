@@ -7,6 +7,7 @@ tags:
   - 计组实验
 categories:
   - 学习
+cover: /img/covers/landscapes/fibonacci-forest.jpg
 ---
 
 

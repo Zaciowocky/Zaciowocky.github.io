@@ -7,6 +7,7 @@ tags:
   - 计组实验
 categories:
   - 学习
+cover: /img/covers/landscapes/p0-misty-forest.jpg
 ---
 
 # P0课上测试

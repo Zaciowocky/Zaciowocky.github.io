@@ -10,6 +10,7 @@ tags:
   - MIPS
 categories:
   - 学习
+cover: /img/covers/landscapes/p4-night-lake.jpg
 ---
 
 > 本文重点是 Controller 单元。设计草稿见总体数据通路和模块接口，测试方案见第六章，课程思考题见第九章。

@@ -240,3 +240,65 @@ body.read-mode :is(.relatedPosts,.pagination-post,#post-comment,.tag_share,.post
 @media (max-width: 480px) {
   #recent-posts .recent-post-item .post_cover { display: none; }
 }
+
+/* Restore the established spacious scale while keeping flat surfaces. */
+#article-container > :is(p,ul,ol,blockquote,h1,h2,h3,h4,h5,h6,.note) {
+  max-width: none; margin-inline: 0;
+}
+#content-inner #article-container, body.read-mode #article-container {
+  font-size: clamp(19px,1.25vw,25px); line-height: 2;
+}
+#content-inner #article-container p { margin-bottom: 1.35em; }
+#content-inner #article-container h1 { font-size: 2em; }
+#content-inner #article-container h2 { font-size: 1.65em; }
+#content-inner #article-container h3 { font-size: 1.35em; }
+#body-wrap #content-inner.layout > #post {
+  padding: clamp(42px,4vw,72px) clamp(34px,4.5vw,88px);
+}
+body.read-mode #content-inner > #post { max-width: none; }
+#content-inner #article-container figure.highlight,
+#content-inner #article-container pre,
+body.read-mode #article-container :is(figure.highlight,pre,.highlight) { font-size: 22px; line-height: 2; }
+#content-inner #article-container figure.highlight pre { font-size: inherit; line-height: inherit; }
+#page-header.post-bg, body.read-mode #page-header.post-bg { height: clamp(500px,42vw,620px); }
+#page-header.post-bg #post-info { bottom: clamp(55px,6vw,90px); }
+#page-header.post-bg #post-info .post-title { font-size: clamp(2.8rem,4.4vw,5.2rem); line-height: 1.22; }
+#page-header.post-bg #post-meta { font-size: clamp(1.05rem,1.35vw,1.55rem); }
+@media (min-width: 901px) {
+  #recent-posts > .recent-post-items .recent-post-item {
+    height: clamp(420px,27vw,560px) !important; min-height: 420px !important; margin-bottom: 28px;
+  }
+  #recent-posts .recent-post-info { padding: 40px 44px !important; }
+  #recent-posts .article-title { font-size: clamp(2rem,2.1vw,3.1rem) !important; }
+  #recent-posts .article-meta-wrap { margin: 14px 0 22px; font-size: clamp(1rem,1.05vw,1.35rem); }
+  #recent-posts .content { font-size: clamp(1.15rem,1.35vw,1.75rem); line-height: 1.9; }
+  #recent-posts .recent-post-item .post_cover {
+    width: 36%; flex-basis: 36%; min-height: 0; margin: 20px 20px 20px 0;
+  }
+}
+/* The shared button skin must not override the exit button's fixed position. */
+body.read-mode .exit-readmode {
+  position: fixed !important; top: 20px !important; right: 20px !important; bottom: auto !important;
+  z-index: 10000; width: auto !important; min-width: 144px; height: 46px;
+  padding: 0 18px; display: inline-flex !important; align-items: center; justify-content: center; gap: 8px;
+  background: #20324a !important; color: #e6edf5 !important; font: 600 15px/1.4 sans-serif;
+  border: 1px solid #8ab4e8; border-radius: 8px; cursor: pointer;
+}
+body.read-mode .exit-readmode::before { display: none; }
+@media (max-width: 768px) {
+  #body-wrap #content-inner.layout > #post, body.read-mode #content-inner > #post { padding: 30px 20px; }
+  #content-inner #article-container, body.read-mode #article-container { font-size: 17px; line-height: 1.9; }
+  #content-inner #article-container figure.highlight,
+  #content-inner #article-container pre,
+  body.read-mode #article-container :is(figure.highlight,pre,.highlight) { font-size: 14px; line-height: 1.7; }
+  #content-inner #article-container figure.highlight pre { font-size: inherit; line-height: inherit; }
+  #page-header.post-bg, body.read-mode #page-header.post-bg { height: 390px; }
+  #page-header.post-bg #post-info { bottom: 34px; }
+  #page-header.post-bg #post-info .post-title { font-size: clamp(2rem,9vw,3rem); }
+  #page-header.post-bg #post-meta { font-size: .95rem; }
+  #recent-posts > .recent-post-items .recent-post-item { flex-direction: column !important; }
+  #recent-posts .recent-post-item .post_cover {
+    display: block; width: auto; flex-basis: auto; height: 190px; min-height: 190px; margin: 16px 16px 0;
+  }
+  body.read-mode .exit-readmode { top: 12px !important; right: 12px !important; min-width: 130px; height: 44px; }
+}

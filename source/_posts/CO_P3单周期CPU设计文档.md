@@ -10,6 +10,7 @@ tags:
   - MIPS
 categories:
   - 学习
+cover: /img/covers/landscapes/p3-mountain-lake.jpg
 ---
 
 # P3 单周期 CPU 设计文档
