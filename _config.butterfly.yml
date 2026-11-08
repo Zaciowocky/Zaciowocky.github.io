@@ -605,8 +605,8 @@ utterances:
   # Issue Mapping: pathname/url/title/og:title
   issue_term: pathname
   # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
-  light_theme: github-light
-  dark_theme: photon-dark
+  light_theme: github-dark
+  dark_theme: github-dark
   js:
   option:
 
@@ -1064,8 +1064,10 @@ inject:
     - <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
     - <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
     - <link rel="stylesheet" href="/css/custom.css?v=20261108-code-layout-v5">
+    - <link rel="stylesheet" href="/css/reading-flat.css?v=20261108-flat-v1">
   bottom:
     - <script defer src="/js/wonderland-dust.js"></script>
+    - <script defer src="/js/reading-flat.js?v=20261108-flat-v1"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
