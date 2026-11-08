@@ -888,7 +888,7 @@ body.read-mode .exit-readmode {
 }
 #content-inner figure.highlight td.gutter {
   flex: 0 0 auto;
-  min-width: 3.25em;
+  min-width: 2em;
   white-space: nowrap;
   user-select: none;
 }
@@ -913,13 +913,13 @@ body.read-mode .exit-readmode {
   overflow-wrap: normal;
 }
 #content-inner figure.highlight .gutter pre {
-  padding-right: 14px;
+  padding-right: 6px;
   padding-left: 14px;
   text-align: left;
 }
 #content-inner figure.highlight .code pre {
   padding-right: 20px;
-  padding-left: 8px;
+  padding-left: 4px;
 }
 #content-inner figure.highlight .line {
   font-size: inherit;
