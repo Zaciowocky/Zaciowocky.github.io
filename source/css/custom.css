@@ -292,7 +292,11 @@ html.hide-aside #hide-aside-btn > i {
 #content-inner #article-container figure.highlight table {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
+}
+#content-inner #article-container figure.highlight .gutter {
+  width: 1%;
+  white-space: nowrap;
 }
 #content-inner #article-container figure.highlight .code {
   width: 100%;
@@ -687,7 +691,7 @@ body.read-mode #article-container :is(figure.highlight, pre, .highlight) {
 body.read-mode #article-container .highlight table {
   display: table !important;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
   background: #061521 !important;
 }
 body.read-mode #article-container .highlight .code {
