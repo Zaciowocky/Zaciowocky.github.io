@@ -289,23 +289,10 @@ html.hide-aside #hide-aside-btn > i {
 #content-inner #article-container :is(table th, table td) { border-color: #365161; }
 #content-inner #article-container code { background-color: #1a3348; color: #e1c18e; }
 #content-inner #article-container :is(figure.highlight, pre) { background: #091726; color: #c7d9df; }
-#content-inner #article-container figure.highlight table {
-  display: table;
-  width: 100%;
-  table-layout: auto;
-}
-#content-inner #article-container figure.highlight .gutter {
-  width: 1%;
-  white-space: nowrap;
-}
 #content-inner #article-container figure.highlight .code {
-  width: 100%;
   background: #091726;
 }
 #content-inner #article-container figure.highlight .code pre {
-  width: 100%;
-  min-width: 100%;
-  box-sizing: border-box;
   background: #091726;
 }
 .wonderland-banner-caption { text-align: center; }
@@ -688,20 +675,11 @@ body.read-mode #article-container :is(figure.highlight, pre, .highlight) {
   box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
 }
 
-body.read-mode #article-container .highlight table {
-  display: table !important;
-  width: 100%;
-  table-layout: auto;
-  background: #061521 !important;
-}
+body.read-mode #article-container .highlight table { background: #061521 !important; }
 body.read-mode #article-container .highlight .code {
-  width: 100%;
   background: #061521 !important;
 }
 body.read-mode #article-container .highlight .code pre {
-  width: 100%;
-  min-width: 100%;
-  box-sizing: border-box;
   background: #061521 !important;
 }
 body.read-mode #article-container .highlight .gutter { background: #0b2635 !important; }
@@ -865,4 +843,98 @@ body.read-mode .exit-readmode {
   #recent-posts .article-title {
     font-size: 1.28em;
   }
+}
+
+/* Shared code-block geometry. Keep the existing palette; reserve real space
+   for line numbers and scroll long lines as a single unit in every mode. */
+#content-inner figure.highlight,
+#content-inner pre:not(figure.highlight pre) {
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: normal;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+#content-inner figure.highlight { overflow: hidden; }
+#content-inner figure.highlight > table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  border-spacing: 0;
+  table-layout: auto;
+}
+#content-inner figure.highlight > table > tbody {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+}
+#content-inner figure.highlight > table > tbody > tr {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+#content-inner figure.highlight td.gutter,
+#content-inner figure.highlight td.code {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+}
+#content-inner figure.highlight td.gutter {
+  flex: 0 0 auto;
+  min-width: 3.25em;
+  white-space: nowrap;
+  user-select: none;
+}
+#content-inner figure.highlight td.code {
+  flex: 1 0 auto;
+  min-width: 0;
+}
+#content-inner figure.highlight pre {
+  overflow: visible;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 14px 0;
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+#content-inner figure.highlight .gutter pre {
+  padding-right: 14px;
+  padding-left: 14px;
+  text-align: right;
+}
+#content-inner figure.highlight .code pre {
+  padding-right: 20px;
+  padding-left: 8px;
+}
+#content-inner figure.highlight .line {
+  font-size: inherit;
+  line-height: inherit;
+}
+#content-inner figure.highlight .highlight-tools {
+  height: auto;
+  min-height: 38px;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+#content-inner figure.highlight .highlight-tools.closed ~ table { display: none; }
+#content-inner pre > code { font-size: inherit; line-height: inherit; }
+@media (max-width: 768px) {
+  #content-inner figure.highlight,
+  #content-inner pre:not(figure.highlight pre) { font-size: 14px; }
 }

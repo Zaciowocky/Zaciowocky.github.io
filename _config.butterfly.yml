@@ -1063,7 +1063,7 @@ inject:
     - <link rel="preload" as="image" href="/img/hero/wonderland-hero-v1.png">
     - <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
     - <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
-    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/custom.css?v=20261108-code-layout-v2">
   bottom:
     - <script defer src="/js/wonderland-dust.js"></script>
 
