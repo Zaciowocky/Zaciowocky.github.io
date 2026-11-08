@@ -850,8 +850,8 @@ body.read-mode .exit-readmode {
 #content-inner figure.highlight,
 #content-inner pre:not(figure.highlight pre) {
   max-width: 100%;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 22px;
+  line-height: 2;
   letter-spacing: normal;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -936,5 +936,8 @@ body.read-mode .exit-readmode {
 #content-inner pre > code { font-size: inherit; line-height: inherit; }
 @media (max-width: 768px) {
   #content-inner figure.highlight,
-  #content-inner pre:not(figure.highlight pre) { font-size: 14px; }
+  #content-inner pre:not(figure.highlight pre) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
