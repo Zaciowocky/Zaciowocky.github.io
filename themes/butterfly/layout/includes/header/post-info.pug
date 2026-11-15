@@ -73,7 +73,7 @@
       - const commentUse = comments.use && comments.use[0]
       if page.page_views !== undefined
         +pvBlock('', '', '')
-          span= page.page_views
+          span#busuanzi_value_page_pv(data-initial-views=page.page_views)= page.page_views
       else if page.comments !== false && commentUse && !comments.lazyload
         if commentUse === 'Valine' && theme.valine.visitor
           +pvBlock(url_for(page.path), 'leancloud_visitors', page.title)

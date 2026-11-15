@@ -28,18 +28,24 @@
   }
 
   function loading() {
-    elements().forEach(([, element]) => {
+    elements().forEach(([key, element]) => {
       clearRetry(element);
-      element.textContent = '加载中…';
-      element.title = '正在读取浏览量';
+      const initial = element.dataset.initialViews;
+      element.textContent = key === 'page_pv' && initial ? initial : '加载中…';
+      element.title = key === 'page_pv' && initial ? '初始浏览量，正在同步访问次数' : '正在读取浏览量';
       element.setAttribute('aria-live', 'polite');
     });
   }
 
   function unavailable() {
-    elements().forEach(([, element]) => {
+    elements().forEach(([key, element]) => {
       element.textContent = '暂不可用，重试';
-      element.title = '统计服务暂时无法连接，点击重试';
+      if (key === 'page_pv' && element.dataset.initialViews) {
+        element.textContent = element.dataset.initialViews;
+        element.title = '统计服务暂时无法连接，当前显示初始浏览量';
+      } else {
+        element.title = '统计服务暂时无法连接，点击重试';
+      }
       element.setAttribute('role', 'button');
       element.setAttribute('tabindex', '0');
       element.style.cursor = 'pointer';
@@ -95,8 +101,15 @@
       }
       values.forEach(([key, element]) => {
         clearRetry(element);
-        element.textContent = String(data[key]);
-        element.title = '浏览量由不蒜子统计';
+        const initial = Number(element.dataset.initialViews);
+        const count = Number(data[key]);
+        const value = key === 'page_pv' && Number.isFinite(initial)
+          ? initial + count * 2
+          : count;
+        element.textContent = String(value);
+        element.title = key === 'page_pv' && Number.isFinite(initial)
+          ? '初始浏览量 + 不蒜子访问次数 × 2'
+          : '浏览量由不蒜子统计';
         const container = document.getElementById(`busuanzi_container_${key}`);
         if (container) container.style.display = 'inline';
       });
