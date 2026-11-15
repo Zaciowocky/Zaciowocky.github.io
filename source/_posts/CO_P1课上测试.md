@@ -1,6 +1,7 @@
 ---
 title: P1课上测试
 date: 2026-10-19 00:00:00
+page_views: 234
 description: 接线柱连通性、方向键优先级与注释过滤器的题面及解题记录
 mathjax: true
 tags:

@@ -1,6 +1,7 @@
 ---
 title: P3 单周期 CPU 设计文档
 date: 2026-10-31 20:00:00
+page_views: 284
 updated: 2026-10-31 20:00:00
 permalink: 2026/10/31/co-p3-single-cycle-cpu/
 description: 基于 Logisim 的 32 位单周期 CPU，记录数据通路、控制信号、测试方案和五道思考题。

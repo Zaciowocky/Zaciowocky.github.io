@@ -1,6 +1,7 @@
 ---
 title: Logisim挑战题 Fibonacci_2
 date: 2026-10-12 15:30:00
+page_views: 222
 description: 斐波那契挑战题的思路以及实现
 mathjax: true
 tags:

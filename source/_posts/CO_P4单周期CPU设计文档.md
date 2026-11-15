@@ -1,6 +1,7 @@
 ---
 title: P4 单周期 CPU 设计文档（Verilog）
 date: 2026-11-04 15:05:28
+page_views: 225
 updated: 2026-11-08
 permalink: 2026/11/04/co-p4-single-cycle-cpu/
 description: 以 Controller 为核心的 Verilog 单周期 CPU，集中表达指令动作，附模块接口、处理流程、测试方案与课程思考题。

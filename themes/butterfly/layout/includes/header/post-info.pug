@@ -71,7 +71,10 @@
               i.fa-solid.fa-spinner.fa-spin
 
       - const commentUse = comments.use && comments.use[0]
-      if page.comments !== false && commentUse && !comments.lazyload
+      if page.page_views !== undefined
+        +pvBlock('', '', '')
+          span= page.page_views
+      else if page.comments !== false && commentUse && !comments.lazyload
         if commentUse === 'Valine' && theme.valine.visitor
           +pvBlock(url_for(page.path), 'leancloud_visitors', page.title)
             span.leancloud-visitors-count

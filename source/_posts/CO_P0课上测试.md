@@ -1,6 +1,7 @@
 ---
 title: P0课上测试
 date: 2026-10-12 22:08:10
+page_views: 260
 description: 组合逻辑电路与两道有限状态机题目的记录
 mathjax: true
 tags:

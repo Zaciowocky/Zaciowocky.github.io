@@ -1,6 +1,7 @@
 ---
 title: iverilog + gtkwave 仿真方法
 date: 2026-09-22
+page_views: 270
 categories:
   - 学习笔记
 tags:
