@@ -32,8 +32,18 @@ header#page-header(class=`${headerClassName + isFixedClass}${wonderlandKind ? ' 
   include ./nav.pug
   if top_img !== false
     if globalPageType === 'post'
+      .blg-champion-banner.blg-champion-banner--post(aria-label='BLG 2026 Worlds Champions')
+        img(src='/img/blg-worlds-2026-banner.png' alt='')
+        .blg-champion-banner__text
+          strong BLG
+          span 2026 WORLDS CHAMPIONS
       include ./post-info.pug
     else if globalPageType === 'home'
+      .blg-champion-banner(aria-label='BLG 2026 Worlds Champions')
+        img(src='/img/blg-worlds-2026-banner.png' alt='')
+        .blg-champion-banner__text
+          strong BLG
+          span 2026 WORLDS CHAMPIONS
       #site-info
         h1#site-title=config.title
         if theme.subtitle.enable
@@ -55,3 +65,4 @@ header#page-header(class=`${headerClassName + isFixedClass}${wonderlandKind ? ' 
     //- improve seo
     if globalPageType !== 'post'
       h1.title-seo=page.title || page.tag || page.category || config.title
+
